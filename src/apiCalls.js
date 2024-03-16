@@ -1,7 +1,7 @@
 const apiKey = process.env.REACT_APP_API_KEY;
 
-export const fetchArticles = async () => {
-  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+export const fetchArticles = async (category = '') => {
+  const url = `https://newsapi.org/v2/top-headlines?country=us&${category}apiKey=${apiKey}`;
   try {
     const response = await fetch(url);
     if (!response.ok) {

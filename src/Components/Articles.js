@@ -3,7 +3,7 @@ import Search from "./Search";
 import { useState } from 'react';
 import './Articles.css';
 
-export default function Articles({articles, error}) {
+export default function Articles({articles, category, setCategory, error}) {
   const [filteredArticles, setFilteredArticles] = useState([])
 
   const handleSearch = (query) => {
@@ -32,7 +32,7 @@ export default function Articles({articles, error}) {
 
   return (
     <>
-      <Search handleSearch={handleSearch} />
+      <Search handleSearch={handleSearch} category={category} setCategory={setCategory}/>
       { error ? <p>{error}</p> : articleCards}
     </>
   )
