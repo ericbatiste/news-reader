@@ -1,7 +1,9 @@
 
 import { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router';
 import data from '../build-data'
 import Articles from './Articles';
+import Details from './Details';
 import './App.css';
 
 function App() {
@@ -12,9 +14,10 @@ function App() {
   }, [])
 
   return (
-   <>
-      <Articles articles={articles}/>
-   </> 
+   <Routes>
+      <Route path="/" element={ <Articles articles={articles} /> } />
+      <Route path="/article/:id" element={ <Details articles={articles} /> } />
+   </Routes> 
   )
 }
 

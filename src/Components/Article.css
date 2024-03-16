@@ -1,0 +1,9 @@
+.article-container {
+  display: flex;
+  margin: 20px;
+  gap: 20px;
+}
+
+.article-image {
+  width: 500px;
+}
