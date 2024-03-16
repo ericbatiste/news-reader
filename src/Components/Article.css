@@ -7,5 +7,14 @@
 }
 
 .article-image {
-  width: 500px;
+  width: 45%;
+}
+
+@media screen and (max-width: 800px) {
+  .article-container {
+    flex-direction: column;
+  }
+  .article-image {
+    width: 100%;
+  }
 }
