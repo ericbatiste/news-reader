@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import data from '../build-data'
+import data from '../build-data';
 import Articles from './Articles';
 import Details from './Details';
 import './App.css';
@@ -21,7 +21,7 @@ function App() {
       </header>
       <main>
         <Routes>
-            <Route path="/" element={ <Articles articles={articles} /> } />
+            <Route path="/" element={ <Articles articles={articles}/> }/>
             <Route path="/article/:id" element={ <Details articles={articles} /> } />
         </Routes> 
       </main>

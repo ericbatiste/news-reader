@@ -7,11 +7,12 @@ export default function Details({ articles }) {
   const id = Number(useParams().id)
   
   useEffect(() => {
-    const foundArticle = articles.find(article => articles.indexOf(article) === id)
-    setArticle(foundArticle)
-  }, [])
+    const foundArticle = articles.find(article => articles.indexOf(article) === id);
+    if (foundArticle) setArticle(foundArticle)
+  }, [articles, id])
 
   if (!article) return <></>
+  
   return (
     <article className='article-details-container'>
       <h2>{article.title}</h2>

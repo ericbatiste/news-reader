@@ -1,0 +1,6 @@
+.search-form > input {
+  padding: .5rem 2rem;
+  width: 145px;
+  border: 2px solid black;
+  border-radius: .5rem;
+}

@@ -1,8 +1,24 @@
 import Article from "./Article";
+import Search from "./Search";
+import { useState } from 'react';
 import './Articles.css';
 
-export default function Articles({ articles }) {
-  const articleCards = articles.map(article => {
+export default function Articles({articles}) {
+  const [filteredArticles, setFilteredArticles] = useState([])
+
+  const handleSearch = (query) => {
+    const filtered = articles.filter(article => {
+      return article.title.toLowerCase().includes(query.toLowerCase())
+    });
+    setFilteredArticles(filtered)
+  }
+
+  const articlesToRender = () => {
+    if (filteredArticles.length) return filteredArticles;
+    return articles;
+  }
+
+  const articleCards = articlesToRender().map(article => {
     return (
       <Article 
         headline={article.title}
@@ -16,6 +32,7 @@ export default function Articles({ articles }) {
 
   return (
     <>
+      <Search handleSearch={handleSearch} />
       {articleCards}
     </>
   )
