@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { fetchArticles } from '../apiCalls';
 import Articles from './Articles';
 import Details from './Details';
+import NotFound from './NotFound';
 import './App.css';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
                 error={error}/> 
               }/>
             <Route path="/article/:id" element={ <Details articles={articles} /> } />
+            <Route path="*" element={ <NotFound />}/>
         </Routes> 
       </main>
     </>
