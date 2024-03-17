@@ -1,6 +1,17 @@
-.search-form > input {
+.search-filter-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search-form > input,
+.select-category {
   padding: .5rem 2rem;
   width: 145px;
   border: 2px solid black;
   border-radius: .5rem;
+}
+
+.select-category {
+  width: 200px;
 }
